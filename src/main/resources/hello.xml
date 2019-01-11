@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+
+    <bean class="dk.lundogbendsen.foundation.standard.DiceCup">
+        <constructor-arg>
+            <list>
+                <bean class="dk.lundogbendsen.foundation.standard.BasicDie" />
+                <bean class="dk.lundogbendsen.foundation.standard.BasicDie" />
+            </list>
+        </constructor-arg>
+    </bean>
+
+</beans>
