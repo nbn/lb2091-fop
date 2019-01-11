@@ -1,18 +1,14 @@
 package dk.lundogbendsen.foundation.standard;
 
-import lombok.ToString;
-
 import java.util.Random;
 
-@ToString
-@MyAnnotation(greeting = "basicDie")
-public class BasicDie implements Die {
+public class MultiDie implements Die {
 
-    private int no = 6;
+    private int no = 100;
 
     @Override
     public void roll() {
-        no = new Random().nextInt(6) + 1;
+        no = new Random().nextInt(100) + 1;
     }
 
     @Override
