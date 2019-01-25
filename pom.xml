@@ -35,7 +35,7 @@
 			<artifactId>h2</artifactId>
 		</dependency>
 
-		<!-- To get aspect support -->
+		<!-- To get aspect support (plus EnableAspectjAutoProxy -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-aop</artifactId>

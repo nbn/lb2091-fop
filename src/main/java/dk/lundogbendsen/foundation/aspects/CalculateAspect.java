@@ -1,13 +1,13 @@
 package dk.lundogbendsen.foundation.aspects;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.annotation.*;
 import org.slf4j.Logger;
+import org.springframework.stereotype.Component;
 
 @Aspect
-//@Component
+@Component
 public class CalculateAspect {
     private static final Logger log = org.slf4j.LoggerFactory.getLogger(CalculateAspect.class);
 
@@ -26,16 +26,34 @@ public class CalculateAspect {
 
     // Then write the advice
     @AfterReturning(pointcut = "whenCalculating()", returning = "retval")
-    public void  afterCalculation(Object retval) {
+    public void  afterCalculation(Long retval) {
       log.info("Calculation method is returning {}", retval);
     }
+
+
+
+
+
+
+
+
+
 
     // Advice types
     // @Before, @After, @AfterReturning, @AfterThrowing, @Around
 
     //@Around("within(dk.lundogbendsen.foundation.aspects.Service2)")
     public void aroundService2(ProceedingJoinPoint joinPoint) throws Throwable {
-        log.info("Around method {}", joinPoint.toLongString());
+        log.info("Before calling {}", joinPoint.toLongString());
         joinPoint.proceed();
+        log.info("After returning from {}", joinPoint.toLongString());
     }
+
+
+
+    @Before("execution(public * calculateInterest(..))")
+    public void somethingHappeningBeforeTheMEthodsThatINeedToFind(JoinPoint joinPoint) {
+        log.info("Before {}", joinPoint.toLongString());
+    }
+
 }
