@@ -14,7 +14,7 @@ public class FoundationApplication {
 		SpringApplication.run(FoundationApplication.class, args);
 	}
 
-	@Bean
+	//@Bean
 	public CommandLineRunner getStarter() {
 		return args -> {
 			System.out.println("Hello world");

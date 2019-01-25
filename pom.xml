@@ -35,6 +35,17 @@
 			<artifactId>h2</artifactId>
 		</dependency>
 
+
+		<!-- Added before testing section to have a full spring app -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
 		<!-- To get aspect support (plus EnableAspectjAutoProxy -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class AspectRunner implements CommandLineRunner {
 
     private static final Logger log = org.slf4j.LoggerFactory.getLogger(AspectRunner.class);
